@@ -24,24 +24,22 @@ My target user base comprises both residents and visitors to the San Francisco B
 I plan to utilize the BART Legacy API to obtain data on station locations, train schedules, service advisories, and facility details. To ensure the most up-to-date information, I'll fetch data in real-time. Additionally, I'll explore the possibility of integrating other data sources, such as mapping APIs and weather services, to enhance the user experience.
 
 **Approach to Creating the Project:**
+API Challenges: I anticipate potential challenges with the BART Legacy API, including rate limits, data inconsistencies, and limited features. To address this, I'll closely monitor the API's documentation and consider implementing caching mechanisms to mitigate rate-limiting issues.
 
-    API Challenges: I anticipate potential challenges with the BART Legacy API, including rate limits, data inconsistencies, and limited features. To address this, I'll closely monitor the API's documentation and consider implementing caching mechanisms to mitigate rate-limiting issues.
+Security: Ensuring user data security is paramount. While I won't have a back-end, I'll follow best practices for handling user authentication and safeguarding sensitive information if I decide to incorporate user accounts and profiles into the app.
 
-    Security: Ensuring user data security is paramount. While I won't have a back-end, I'll follow best practices for handling user authentication and safeguarding sensitive information if I decide to incorporate user accounts and profiles into the app.
+Functionality: The core functionality of my app will encompass trip planning, real-time train schedules, station details, and service advisories. I'll also explore features like user preferences, favorites, and potentially social sharing of trip plans.
 
-    Functionality: The core functionality of my app will encompass trip planning, real-time train schedules, station details, and service advisories. I'll also explore features like user preferences, favorites, and potentially social sharing of trip plans.
+User Flow: Users will initiate their journey by selecting departure and destination stations. The app will then present route options and provide comprehensive information about the selected route and station amenities. Real-time train schedules and service advisories will remain easily accessible throughout the user's travel.
 
-    User Flow: Users will initiate their journey by selecting departure and destination stations. The app will then present route options and provide comprehensive information about the selected route and station amenities. Real-time train schedules and service advisories will remain easily accessible throughout the user's travel.
-
-    Beyond CRUD: To distinguish my app from a basic CRUD application, I plan to implement features such as real-time notifications for service disruptions, integration with external data sources for local events and attractions, and possibly user-generated content like reviews and recommendations.
+Beyond CRUD: To distinguish my app from a basic CRUD application, I plan to implement features such as real-time notifications for service disruptions, integration with external data sources for local events and attractions, and possibly user-generated content like reviews and recommendations.
 
 **Stretch Goals:**
 Some stretch goals for my project could include:
-
-    Developing a mobile app version for increased accessibility.
-    Integrating payment systems to allow for ticket purchases within the app.
-    Adding a chatbot for on-demand user assistance.
-    Expanding the app's scope to include multi-modal transportation options beyond BART.
+- Developing a mobile app version for increased accessibility.
+- Integrating payment systems to allow for ticket purchases within the app.
+- Adding a chatbot for on-demand user assistance.
+- Expanding the app's scope to include multi-modal transportation options beyond BART.
 
 In conclusion, my project's focus is on creating an intuitive travel planner using the BART Legacy API. With a keen eye on user experience, real-time data, and thoughtful design, I intend to make public transportation in the Bay Area more accessible and convenient for a diverse range of users. As I progress, I'll adapt my approach based on emerging challenges and opportunities.
 
