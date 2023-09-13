@@ -43,5 +43,5 @@ Some stretch goals for my project could include:
 
 In conclusion, my project's focus is on creating an intuitive travel planner using the BART Legacy API. With a keen eye on user experience, real-time data, and thoughtful design, I intend to make public transportation in the Bay Area more accessible and convenient for a diverse range of users. As I progress, I'll adapt my approach based on emerging challenges and opportunities.
 
-### Final decison:
+### Project demo example:
 **Link to FIGMA:** https://shorturl.at/dgOW6
