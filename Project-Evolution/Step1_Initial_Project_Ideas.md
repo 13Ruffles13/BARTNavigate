@@ -7,6 +7,3 @@ You’ll pick up to 3 project ideas to propose to your mentor and the Springboar
 - Bay Area Transit Tracker (BART API) 
 - Create a mock ride-sharing app using the (ads-B Exchange)
 - Develop a site using the (Pet Finder API) to help users find and adopt pets during their travels.
-
-### Final decison:
-**Link to FIGMA:** https://shorturl.at/dgOW6
