@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../assets/images/Logo-BartNavigate.jpg";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
