@@ -1,0 +1,15 @@
+/* App.css */
+
+/* Apply a background color and set font styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 1200px; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 20px;
+}
