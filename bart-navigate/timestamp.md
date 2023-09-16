@@ -9,3 +9,5 @@
 ### 9/16/2023
 
 - [x] 6:00 am - 8:00 am: the code in "services/bartService.js" imports dependencies, sets up a BART API key and URL, and exports a "fetchBartRealTimeInfo" function to retrieve real-time BART data. Additionally, a React component named "About" is included to fetch and display this data using state variables and the "useEffect" hook.
+
+- [x] 9:00 am - 3:00 pm: The React component "About" performs a series of tasks, including importing dependencies, initializing multiple state variables like "loading," "stations," "selectedStation," and others. It defines functions to handle user interactions such as selecting stations and dates, fetching real-time BART data, and checking if both stations are selected. The component utilizes the "useEffect" hook to trigger actions when specific variables change, such as updating available time options based on the selected date. It also provides a user interface with dropdowns to select stations, dates, and times and displays real-time BART information, including closest trains and their departure times, when both stations are selected and matching routes are found.
