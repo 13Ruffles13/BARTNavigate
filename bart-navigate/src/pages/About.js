@@ -4,17 +4,19 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 function About() {
-  const [loading, setLoading] = useState(true);
-  const [stations, setStations] = useState([]);
-  const [selectedStation, setSelectedStation] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [userSelectedTime, setUserSelectedTime] = useState("");
-  const [colorRoutes, setColorRoutes] = useState([]);
-  const [matchingTrains, setMatchingTrains] = useState({});
+  // State variables to manage various aspects of the component
+  const [loading, setLoading] = useState(true); // Loading indicator state
+  const [stations, setStations] = useState([]); // List of BART stations
+  const [selectedStation, setSelectedStation] = useState(""); // Currently selected BART station
+  const [selectedDate, setSelectedDate] = useState(null); // Selected date
+  const [userSelectedTime, setUserSelectedTime] = useState(""); // User-selected departure time
+  const [colorRoutes, setColorRoutes] = useState([]); // List of matching route colors
+  const [matchingTrains, setMatchingTrains] = useState({}); // Trains for matching route colors
   const [currentLocation, setCurrentLocation] = useState(""); // User's current location
-  const [timeOptions, setTimeOptions] = useState([]); // Added timeOptions state
-  const [bothStationsSelected, setBothStationsSelected] = useState(false);
+  const [timeOptions, setTimeOptions] = useState([]); // Available departure time options
+  const [bothStationsSelected, setBothStationsSelected] = useState(false); // Check if both stations are selected
 
+  // Function to check if both stations are selected
   const checkBothStationsSelected = () => {
     if (selectedStation && currentLocation && selectedDate) {
       setBothStationsSelected(true);
@@ -23,6 +25,7 @@ function About() {
     }
   };
 
+  // Fetch BART station data when the component mounts
   useEffect(() => {
     async function getBartData() {
       try {
@@ -38,28 +41,33 @@ function About() {
     getBartData();
   }, []);
 
+  // Check if both stations are selected whenever any of them changes
   useEffect(() => {
     checkBothStationsSelected();
   }, [selectedStation, currentLocation, selectedDate]);
 
+  // Fetch closest BART trains when both stations are selected
   useEffect(() => {
     if (bothStationsSelected) {
       fetchClosestTrains(selectedStation);
     }
   }, [bothStationsSelected]);
 
+  // Handle the selection of a BART station
   const handleStationSelect = (station) => {
     setSelectedStation(station);
     if (station === "" || station === undefined) return;
     fetchClosestTrains(station);
   };
 
+  // Handle the selection of the user's current location
   const handleCurrentLocationSelect = (location) => {
     setCurrentLocation(location);
     if (selectedStation === "" || selectedStation === undefined) return;
     fetchClosestTrains(selectedStation);
   };
 
+  // Fetch the closest BART trains for the selected station
   const fetchClosestTrains = (destination) => {
     if (currentLocation === "" || destination === "") {
       console.log("Please select both your current location and destination.");
@@ -122,6 +130,7 @@ function About() {
     }
   };
 
+  // Define time range options based on the selected date
   useEffect(() => {
     if (selectedDate) {
       let startTime = new Date(selectedDate);
@@ -154,19 +163,23 @@ function About() {
     }
   }, [selectedDate]);
 
+  // Handle the selection of a date
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
+  // Handle the selection of a departure time
   const handleTimeSelect = (time) => {
     setUserSelectedTime(time);
   };
 
+  // Check if the selected date is a holiday (e.g., Christmas)
   const isHoliday = (date) => {
     const christmas = new Date(date.getFullYear(), 11, 25);
     return date.getTime() === christmas.getTime();
   };
 
+  // Render the component
   return (
     <div className="about">
       <h2>Real-Time BART Information</h2>
@@ -175,7 +188,7 @@ function About() {
       ) : (
         <div>
           <form>
-          <div>
+            <div>
               <label>Select current station:</label>
               <select
                 value={currentLocation}
