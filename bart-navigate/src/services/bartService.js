@@ -27,6 +27,7 @@ export async function fetchBartRealTimeInfo() {
       }
       jsonData = result;
     });
+    console.log(jsonData);
     return jsonData;
   } catch (error) {
     throw new Error(error.message);
