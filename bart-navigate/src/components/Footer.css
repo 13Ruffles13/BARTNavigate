@@ -1,0 +1,13 @@
+/* Style the footer */
+.footer {
+  background-color: #0072ce;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Style the emoji */
+.emoji {
+  font-size: 24px;
+  margin-left: 5px;
+}

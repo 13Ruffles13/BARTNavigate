@@ -1,0 +1,93 @@
+/* Style the form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px; /* Increased max-width for consistency */
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Select input fields, textarea, and the date calendar */
+input[type="text"],
+input[type="email"],
+textarea,
+select,
+text {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 10px; /* Added padding for better spacing */
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+/* Style the loading indicator */
+p {
+  text-align: center;
+}
+
+/* Style the selected information */
+h3 {
+  margin-top: 20px;
+}
+
+/* Style the train route information */
+h4 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Style the strong element */
+strong {
+  color: #0072ce;
+}
+
+/* Define route colors and corresponding styles */
+.route-color {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.route-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Color coordination for routes */
+.route-color.orange .route-circle {
+  background-color: #ff8c00; /* Orange */
+  color: white;
+}
+
+.route-color.red .route-circle {
+  background-color: #ff4500; /* Red */
+  color: white;
+}
+
+.route-color.blue .route-circle {
+  background-color: #0072ce; /* Blue */
+  color: white;
+}
+
+/* Add more color styles for other routes as needed */

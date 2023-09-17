@@ -11,6 +11,9 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
           <li className="nav-item">
+            <Link to="/route-info">Route Info</Link>
+          </li>
+          <li className="nav-item">
             <Link to="/about">About</Link>
           </li>
           <li className="nav-item">
