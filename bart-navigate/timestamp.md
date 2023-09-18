@@ -12,4 +12,6 @@
 
 - [x] 9:00 am - 3:00 pm: The React component "About" performs a series of tasks, including importing dependencies, initializing multiple state variables like "loading," "stations," "selectedStation," and others. It defines functions to handle user interactions such as selecting stations and dates, fetching real-time BART data, and checking if both stations are selected. The component utilizes the "useEffect" hook to trigger actions when specific variables change, such as updating available time options based on the selected date. It also provides a user interface with dropdowns to select stations, dates, and times and displays real-time BART information, including closest trains and their departure times, when both stations are selected and matching routes are found.
 
-# Total time spent: 11 hours
+- [x] 8:00 pm - 10:00 pm: Add route page RouteInfo I transferred the logic from About.js to RouteInfo.js. Added RouteInfo.CSS. Enhanced CSS to include a person user experience. Component Footer.js/Footer.css. Added to give visibility to user interface.
+
+# Total time spent: 13 hours
