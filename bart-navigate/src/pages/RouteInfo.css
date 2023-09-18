@@ -22,6 +22,7 @@ text {
   border-radius: 4px;
   font-size: 14px;
   padding: 10px; /* Added padding for better spacing */
+  margin-bottom: .5rem;
 }
 
 .react-datepicker__input-container {
@@ -89,5 +90,3 @@ strong {
   background-color: #0072ce; /* Blue */
   color: white;
 }
-
-/* Add more color styles for other routes as needed */
