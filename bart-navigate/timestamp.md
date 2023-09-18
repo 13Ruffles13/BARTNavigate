@@ -14,4 +14,7 @@
 
 - [x] 8:00 pm - 10:00 pm: Add route page RouteInfo I transferred the logic from About.js to RouteInfo.js. Added RouteInfo.CSS. Enhanced CSS to include a person user experience. Component Footer.js/Footer.css. Added to give visibility to user interface.
 
-# Total time spent: 13 hours
+### 9/18/2023
+- [x] 9:00 am - 11:00 am: Added JSDOC to all components / files in the application to give better fluid workflow for reading the codebase.
+
+# Total time spent: 15 hours

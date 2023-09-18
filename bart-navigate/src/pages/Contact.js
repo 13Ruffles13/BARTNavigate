@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
+/**
+ * Component for rendering a contact form.
+ */
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,6 +11,10 @@ function Contact() {
     message: "",
   });
 
+  /**
+   * Handles changes in form input fields.
+   * @param {Event} event - The input change event.
+   */
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -16,6 +23,10 @@ function Contact() {
     });
   };
 
+  /**
+   * Handles form submission.
+   * @param {Event} event - The form submission event.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted with data: ", formData);

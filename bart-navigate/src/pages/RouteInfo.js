@@ -2,8 +2,11 @@ import React, { useEffect, useState, useCallback } from "react";
 import { fetchBartRealTimeInfo } from "../services/bartService";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "./RouteInfo.css"; // Import the CSS file for styling
+import "./RouteInfo.css";
 
+/**
+ * Component for displaying real-time BART information.
+ */
 function RouteInfo() {
   // State variables to manage various aspects of the component
   const [loading, setLoading] = useState(true);
@@ -17,7 +20,9 @@ function RouteInfo() {
   const [timeOptions, setTimeOptions] = useState([]);
   const [bothStationsSelected, setBothStationsSelected] = useState(false);
 
-  // Function to check if both stations are selected
+  /**
+   * Function to check if both stations are selected.
+   */
   const checkBothStationsSelected = useCallback(() => {
     if (selectedStation && currentLocation && selectedDate) {
       setBothStationsSelected(true);
@@ -52,22 +57,30 @@ function RouteInfo() {
     checkBothStationsSelected,
   ]);
 
-  // Handle the selection of a BART station
+  /**
+   * Handle the selection of a BART station.
+   * @param {string} station - The selected station.
+   */
   const handleStationSelect = (station) => {
     setSelectedStation(station);
     if (station === "" || station === undefined) return;
     fetchClosestTrains(station);
   };
 
-  // Handle the selection of the user's current location
+  /**
+   * Handle the selection of the user's current location.
+   * @param {string} location - The selected location.
+   */
   const handleCurrentLocationSelect = (location) => {
     setCurrentLocation(location);
     if (selectedStation === "" || selectedStation === undefined) return;
     fetchClosestTrains(selectedStation);
   };
 
-  // Fetch the closest BART trains for the selected station
-  // Memoize the fetchClosestTrains function
+  /**
+   * Fetch the closest BART trains for the selected station.
+   * @param {string} destination - The destination station.
+   */
   const fetchClosestTrains = useCallback(
     (destination) => {
       if (currentLocation === "" || destination === "") {
@@ -141,6 +154,7 @@ function RouteInfo() {
       fetchClosestTrains(selectedStation);
     }
   }, [bothStationsSelected, selectedStation, fetchClosestTrains]);
+
   // Define time range options based on the selected date
   useEffect(() => {
     if (selectedDate) {
@@ -174,17 +188,27 @@ function RouteInfo() {
     }
   }, [selectedDate]);
 
-  // Handle the selection of a date
+  /**
+   * Handle the selection of a date.
+   * @param {Date} date - The selected date.
+   */
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  // Handle the selection of a departure time
+  /**
+   * Handle the selection of a departure time.
+   * @param {string} time - The selected departure time.
+   */
   const handleTimeSelect = (time) => {
     setUserSelectedTime(time);
   };
 
-  // Check if the selected date is a holiday (e.g., Christmas)
+  /**
+   * Check if the selected date is a holiday (e.g., Christmas).
+   * @param {Date} date - The selected date.
+   * @returns {boolean} - True if the date is a holiday, false otherwise.
+   */
   const isHoliday = (date) => {
     const christmas = new Date(date.getFullYear(), 11, 25);
     return date.getTime() === christmas.getTime();
