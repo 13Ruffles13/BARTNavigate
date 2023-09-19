@@ -1,25 +1,27 @@
 /* Home.css */
-
 .home {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .home h1 {
-    font-size: 32px;
-    color: #333; /* Dark text color */
-    margin-bottom: 20px;
-  }
-  
-  .home p {
-    font-size: 18px;
-    color: #666; /* Slightly darker text color */
-    margin-bottom: 30px;
-  }
-  
-  .home img {
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow for the image */
-  }
-  
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7; /* Light background color for the container */
+}
+
+.home h1 {
+  font-size: 36px; /* Increase font size for the title */
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 20px; /* Increase font size for the text */
+  color: #444; /* Slightly darker text color */
+  margin-bottom: 30px;
+}
+
+/* Style the map container */
+#map {
+  width: 100%; /* Set the width to 100% of the container */
+  height: 600px; /* Adjust the height as needed */
+  border: 1px solid #ddd; /* Add a light border around the map */
+  border-radius: 8px; /* Add rounded corners to the map container */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}

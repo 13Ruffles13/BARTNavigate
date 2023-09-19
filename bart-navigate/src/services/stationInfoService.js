@@ -1,18 +1,17 @@
-// services/bartService.js
+// services/stationInfoService.js
 import axios from "axios";
 import { parseString } from "xml2js";
 
 const BART_API_KEY = "MW9S-E7SL-26DU-VV8V";
 const BART_API_URL = "https://api.bart.gov/api";
 
-// Function to fetch real-time BART info
-export async function fetchBartRealTimeInfo() {
+// Function to fetch real-time BART station info
+export async function fetchBartStationInfo() {
   try {
-    const response = await axios.get(`${BART_API_URL}/etd.aspx`, {
+    const response = await axios.get(`${BART_API_URL}/stn.aspx`, {
       params: {
         key: BART_API_KEY,
-        cmd: "etd",
-        orig: "ALL",
+        cmd: "stns",
       },
     });
     if (response.status !== 200) {
