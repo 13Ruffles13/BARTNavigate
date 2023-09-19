@@ -13,7 +13,6 @@ import "./Home.css";
 function Home() {
   const mapRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [stationData, setStationData] = useState(null);
   const mapInitialized = useRef(false);
 
   /**
@@ -39,7 +38,6 @@ function Home() {
 
       fetchBartStationInfo()
         .then((data) => {
-          setStationData(data);
           setIsLoading(false);
           createMarkersOnMap(map, data);
         })
@@ -80,7 +78,7 @@ function Home() {
       if (!isNaN(lat) && !isNaN(lon)) {
         L.marker([lat, lon], { icon: trainIcon })
           .addTo(map)
-          .bindPopup(`<b>${station.name[0]}</b><br/>${station.address[0]}`)
+          .bindPopup(`<b>${station.name[0]}</b><br/>${station.address[0]}`);
       }
     });
   }
