@@ -32,10 +32,25 @@ function Contact() {
     console.log("Form submitted with data: ", formData);
   };
 
+  // Service hours for BartNavigate
+  const serviceHours = {
+    monday: "8:00 AM - 6:00 PM",
+    tuesday: "8:00 AM - 6:00 PM",
+    wednesday: "8:00 AM - 6:00 PM",
+    thursday: "8:00 AM - 6:00 PM",
+    friday: "8:00 AM - 6:00 PM",
+    saturday: "10:00 AM - 4:00 PM",
+    sunday: "Closed",
+  };
+
+  // GitHub and LinkedIn links
+  const githubLink = "https://github.com/13Ruffles13";
+  const linkedinLink = "https://www.linkedin.com/in/rafael-alvarado-jr/";
+
   return (
     <div className="contact-container">
       <h2>Contact us</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -72,6 +87,25 @@ function Contact() {
           Submit
         </button>
       </form>
+      <div className="service-hours">
+        <h3>BartNavigate Service Hours</h3>
+        <ul>
+          {Object.entries(serviceHours).map(([day, hours]) => (
+            <li key={day}>
+              {day.charAt(0).toUpperCase() + day.slice(1)}: {hours}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="social-links">
+        <h3>Connect with the Creator</h3>
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
     </div>
   );
 }

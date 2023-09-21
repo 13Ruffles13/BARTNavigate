@@ -20,4 +20,7 @@
 ### 9/19/2023
 - [x] 12:00 pm - 3:00 pm: Removed from home page static BART API image. Added dependency library leaflet. Added a interactive MAP to the home page letting users click on Train emoji icons that will display details regarding the station on a accurate visual map. Updated CSS. Added a stationInfoService file to interact with a fetch to the API to get information on the station using longitude and latitude.
 
-# Total time spent: 18 hours
+### 9/21/2023
+- [x] 10:00 am - 12:00 pm: Added dynamic UX css to pages to give users better friendly experience when browsing through application. Being able to use any device. Updated index.html to include a google font to give more eye-catching modern look.
+
+# Total time spent: 20 hours

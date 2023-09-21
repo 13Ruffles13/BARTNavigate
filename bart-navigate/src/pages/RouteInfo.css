@@ -1,10 +1,42 @@
+/* Apply a background color and set font styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+/* Style the container for route info and BART map */
+.route-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1400px; /* Set a larger maximum width for the content on larger screens */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 20px; /* Added padding for better spacing */
+}
+
+/* Style the real-time info section */
+.real-time-info {
+  flex: 1;
+  max-width: 65%; /* Adjust the width as needed */
+  box-sizing: border-box; /* Include padding and borders in the width */
+  padding: 20px; /* Added padding for better spacing */
+}
+
+h2 {
+  font-size: 24px; /* Increase font size for the title */
+  margin-bottom: 20px;
+}
+
 /* Style the form elements */
-form {
+.rout-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   max-width: 400px; /* Increased max-width for consistency */
-  margin: 0 auto;
+  box-sizing: border-box; /* Include padding and borders in the width */
 }
 
 label {
@@ -22,7 +54,7 @@ text {
   border-radius: 4px;
   font-size: 14px;
   padding: 10px; /* Added padding for better spacing */
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .react-datepicker__input-container {
@@ -77,16 +109,59 @@ strong {
 
 /* Color coordination for routes */
 .route-color.orange .route-circle {
-  background-color: #ff8c00; /* Orange */
+  background-color: #f99f1a; /* Orange */
+  color: white;
+}
+
+.route-color.green .route-circle {
+  background-color: #4db848; /* Green */
+  color: white;
+}
+
+.route-color.yellow .route-circle {
+  background-color: #fce125; /* Yellow */
   color: white;
 }
 
 .route-color.red .route-circle {
-  background-color: #ff4500; /* Red */
+  background-color: #e00148; /* Red */
   color: white;
 }
 
 .route-color.blue .route-circle {
-  background-color: #0072ce; /* Blue */
+  background-color: #00aeef; /* Blue */
   color: white;
+}
+
+/* Style the BART map section */
+.bart-map {
+  flex: 1;
+  max-width: 100%; /* Adjust the width as needed */
+  box-sizing: border-box; /* Include padding and borders in the width */
+  padding: 20px; /* Added padding for better spacing */
+}
+
+/* Style the BART map image */
+img {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  img {
+    height: 100%;
+  }
+  .route-info-container {
+    flex-direction: column; /* Stack elements on smaller screens */
+  }
+
+  .real-time-info {
+    max-width: 100%; /* Full width for real-time info on smaller screens */
+  }
+
+  .bart-map {
+    max-width: 100%; /* Full width for BART map on smaller screens */
+  }
 }

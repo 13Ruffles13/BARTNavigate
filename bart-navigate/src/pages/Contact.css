@@ -1,19 +1,32 @@
 /* Contact Container */
 .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f3f3f3;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* Header Styles */
 .contact-container h2 {
-  color: #ff6200; /* BART orange color */
+  color: #ff6200;
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Form Styles */
+.contact-form {
+  width: 100%;
+  max-width: 600px; /* Adjust the form's maximum width for larger screens */
+}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -24,44 +37,95 @@ label {
   margin-bottom: 5px;
 }
 
+/* Input and Textarea Styles */
 input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   margin-top: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease; /* Add a smooth transition effect */
 }
 
 textarea {
   resize: vertical;
   height: 150px;
-  width: 100%;
 }
 
 /* Submit Button */
 .submit-button {
-  background-color: #ff6200; /* BART orange color */
+  background-color: #ff6200;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.2s ease; /* Add a smooth transition effect */
 }
 
 .submit-button:hover {
-  background-color: #ff4500; /* Slightly darker orange on hover */
+  background-color: #ff4500;
 }
 
 /* Additional Styling */
-.contact-container a {
-  color: #007acc; /* BART blue color for links */
-  text-decoration: none;
+.service-hours,
+.social-links {
+  text-align: center;
 }
 
-.contact-container a:hover {
+.service-hours h3,
+.social-links h3 {
+  color: #007acc;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-hours ul,
+.social-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-hours li,
+.social-links li {
+  margin-bottom: 5px;
+}
+
+.social-links a {
+  color: #007acc;
+  text-decoration: none;
+  padding-right: 0.5rem;
+}
+
+.social-links a:hover {
   text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 100%; /* Adjust form width for smaller screens */
+  }
+
+  /* Additional adjustments for smaller screens */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 14px;
+  }
+
+  .service-hours,
+  .social-links {
+    text-align: left;
+  }
+
+  .service-hours h3,
+  .social-links h3 {
+    font-size: 18px;
+  }
 }

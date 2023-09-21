@@ -78,7 +78,9 @@ function Home() {
       if (!isNaN(lat) && !isNaN(lon)) {
         L.marker([lat, lon], { icon: trainIcon })
           .addTo(map)
-          .bindPopup(`<b>${station.name[0]}</b><br/>${station.address[0]}`);
+          .bindPopup(
+            `<b>${station.name[0]}</b><br/>Address: ${station.address[0]}, ${station.city[0]}, ${station.state[0]}, ${station.zipcode[0]}`
+          );
       }
     });
   }

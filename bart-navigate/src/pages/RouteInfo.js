@@ -3,6 +3,7 @@ import { fetchBartRealTimeInfo } from "../services/bartService";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./RouteInfo.css";
+import BartMapImage from "../assets/images/BART-System-Map.png";
 
 /**
  * Component for displaying real-time BART information.
@@ -216,93 +217,98 @@ function RouteInfo() {
 
   // Render the component
   return (
-    <div className="about">
-      <h2>Real-Time BART Information</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <form>
-            <div>
-              <label>Select current station:</label>
-              <select
-                value={currentLocation}
-                onChange={(e) => handleCurrentLocationSelect(e.target.value)}
-              >
-                <option value="">Select your current destination</option>
-                {stations.map((station) => (
-                  <option key={station.name[0]} value={station.name[0]}>
-                    {station.name[0]}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label>Select destination:</label>
-              <select
-                value={selectedStation}
-                onChange={(e) => handleStationSelect(e.target.value)}
-              >
-                <option value="">Select a destination</option>
-                {stations.map((station) => (
-                  <option key={station.name[0]} value={station.name[0]}>
-                    {station.name[0]}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label>Select a date:</label>
-              <DatePicker
-                selected={selectedDate}
-                onChange={handleDateChange}
-                dateFormat="yyyy-MM-dd"
-              />
-            </div>
-            <div>
-              <label>Select a time:</label>
-              <select
-                value={userSelectedTime}
-                onChange={(e) => handleTimeSelect(e.target.value)}
-              >
-                {timeOptions.map((time) => (
-                  <option key={time} value={time}>
-                    {time}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {bothStationsSelected && colorRoutes.length > 0 && (
+    <div className="route-info-container">
+      <div className="real-time-info">
+        <h2>Real-Time BART Information</h2>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div>
+            <form className="route-form">
               <div>
-                <h3>Selected Destination: {selectedStation}</h3>
-                <h3>Selected Date: {selectedDate.toLocaleDateString()}</h3>
-                <h3>Selected Time: {userSelectedTime}</h3>
-                {colorRoutes.map((color) => (
-                  <div key={color}>
-                    <h4>
-                      <span className={`route-color ${color.toLowerCase()}`}>
-                        <span className="route-circle"></span>Route {color}
-                      </span>
-                    </h4>
-                    <ul>
-                      {matchingTrains[color].map((train, index) => (
-                        <li key={index}>
-                          Train {index + 1}:{" "}
-                          {train.minutes[0] === "Leaving" ? (
-                            <strong>Train is leaving station</strong>
-                          ) : (
-                            `${train.minutes[0]} minutes away`
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                <label>Select current station:</label>
+                <select
+                  value={currentLocation}
+                  onChange={(e) => handleCurrentLocationSelect(e.target.value)}
+                >
+                  <option value="">Select your current destination</option>
+                  {stations.map((station) => (
+                    <option key={station.name[0]} value={station.name[0]}>
+                      {station.name[0]}
+                    </option>
+                  ))}
+                </select>
               </div>
-            )}
-          </form>
-        </div>
-      )}
+              <div>
+                <label>Select destination:</label>
+                <select
+                  value={selectedStation}
+                  onChange={(e) => handleStationSelect(e.target.value)}
+                >
+                  <option value="">Select a destination</option>
+                  {stations.map((station) => (
+                    <option key={station.name[0]} value={station.name[0]}>
+                      {station.name[0]}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label>Select a date:</label>
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={handleDateChange}
+                  dateFormat="yyyy-MM-dd"
+                />
+              </div>
+              <div>
+                <label>Select a time:</label>
+                <select
+                  value={userSelectedTime}
+                  onChange={(e) => handleTimeSelect(e.target.value)}
+                >
+                  {timeOptions.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {bothStationsSelected && colorRoutes.length > 0 && (
+                <div>
+                  <h3>Selected Destination: {selectedStation}</h3>
+                  <h3>Selected Date: {selectedDate.toLocaleDateString()}</h3>
+                  <h3>Selected Time: {userSelectedTime}</h3>
+                  {colorRoutes.map((color) => (
+                    <div key={color}>
+                      <h4>
+                        <span className={`route-color ${color.toLowerCase()}`}>
+                          <span className="route-circle"></span>Route {color}
+                        </span>
+                      </h4>
+                      <ul>
+                        {matchingTrains[color].map((train, index) => (
+                          <li key={index}>
+                            Train {index + 1}:{" "}
+                            {train.minutes[0] === "Leaving" ? (
+                              <strong>Train is leaving station</strong>
+                            ) : (
+                              `${train.minutes[0]} minutes away`
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </form>
+          </div>
+        )}
+      </div>
+      <div className="bart-map">
+        <img src={BartMapImage} alt="BART Map"></img>
+      </div>
     </div>
   );
 }
