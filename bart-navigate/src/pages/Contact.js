@@ -1,14 +1,25 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Contact.css";
 
 /**
  * Component for rendering a contact form.
+ * @component
  */
 function Contact() {
+  /**
+   * State to manage form data.
+   * @type {Object}
+   * @property {string} name - The name of the sender.
+   * @property {string} email - The email address of the sender.
+   * @property {string} message - The message content.
+   * @property {string} subject - The subject of the message.
+   */
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
+    subject: "",
   });
 
   /**
@@ -29,10 +40,44 @@ function Contact() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    emailjs
+      .send(
+        "service_drwq32n",
+        "template_qygu9o2",
+        formData,
+        "xmsl3nYWUri2ywfYO"
+      )
+      .then(
+        /**
+         * Callback function executed upon successful email submission.
+         * @param {Object} response - The response object from the email service.
+         */
+        (response) => {
+          console.log("Email sent successfully:", response);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            subject: "", // Clear the subject field after submission
+          });
+        },
+        /**
+         * Callback function executed upon an error in email submission.
+         * @param {Error} error - The error object.
+         */
+        (error) => {
+          console.error("Error sending email:", error);
+        }
+      );
+
     console.log("Form submitted with data: ", formData);
   };
 
-  // Service hours for BartNavigate
+  /**
+   * Service hours for BartNavigate.
+   * @type {Object}
+   */
   const serviceHours = {
     monday: "8:00 AM - 6:00 PM",
     tuesday: "8:00 AM - 6:00 PM",
@@ -43,8 +88,16 @@ function Contact() {
     sunday: "Closed",
   };
 
-  // GitHub and LinkedIn links
+  /**
+   * GitHub profile link.
+   * @type {string}
+   */
   const githubLink = "https://github.com/13Ruffles13";
+
+  /**
+   * LinkedIn profile link.
+   * @type {string}
+   */
   const linkedinLink = "https://www.linkedin.com/in/rafael-alvarado-jr/";
 
   return (
@@ -71,6 +124,16 @@ function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
