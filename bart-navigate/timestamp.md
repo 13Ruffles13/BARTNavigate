@@ -23,4 +23,7 @@
 ### 9/21/2023
 - [x] 10:00 am - 12:00 pm: Added dynamic UX css to pages to give users better friendly experience when browsing through application. Being able to use any device. Updated index.html to include a google font to give more eye-catching modern look.
 
-# Total time spent: 20 hours
+### 9/23/2023
+- [x] 2:30 pm - 3:30 pm: Contact.js file. Contact form implemented EmailJS API backend server to allow users to submit emails to contact the creator.
+
+# Total time spent: 21 hours
