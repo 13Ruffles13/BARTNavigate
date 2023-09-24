@@ -1,10 +1,10 @@
 /* Apply a background color and set font styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light gray background */
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Include padding and borders in the width */
+  box-sizing: border-box;
 }
 
 /* Style the container for route info and BART map */
@@ -12,36 +12,37 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1400px; /* Set a larger maximum width for the content on larger screens */
-  margin: 0 auto; /* Center the content horizontally */
-  padding: 20px; /* Added padding for better spacing */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Style the real-time info section */
 .real-time-info {
   flex: 1;
-  max-width: 65%; /* Adjust the width as needed */
-  box-sizing: border-box; /* Include padding and borders in the width */
-  padding: 20px; /* Added padding for better spacing */
+  max-width: 65%;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 h2 {
-  font-size: 24px; /* Increase font size for the title */
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #0072ce;
 }
 
 /* Style the form elements */
-.rout-form {
+.route-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px; /* Increased max-width for consistency */
-  box-sizing: border-box; /* Include padding and borders in the width */
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 /* Select input fields, textarea, and the date calendar */
@@ -52,9 +53,10 @@ select,
 text {
   width: 100%;
   border-radius: 4px;
-  font-size: 14px;
-  padding: 10px; /* Added padding for better spacing */
+  font-size: 16px;
+  padding: 12px;
   margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
 }
 
 .react-datepicker__input-container {
@@ -64,11 +66,14 @@ text {
 /* Style the loading indicator */
 p {
   text-align: center;
+  font-size: 18px;
 }
 
 /* Style the selected information */
 h3 {
   margin-top: 20px;
+  font-size: 22px;
+  color: #333;
 }
 
 /* Style the train route information */
@@ -76,6 +81,7 @@ h4 {
   margin-top: 10px;
   display: flex;
   align-items: center;
+  font-size: 20px;
 }
 
 ul {
@@ -84,7 +90,9 @@ ul {
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #333;
 }
 
 /* Style the strong element */
@@ -98,6 +106,7 @@ strong {
   align-items: center;
   margin-right: 10px;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .route-circle {
@@ -109,42 +118,69 @@ strong {
 
 /* Color coordination for routes */
 .route-color.orange .route-circle {
-  background-color: #f99f1a; /* Orange */
+  background-color: #f99f1a;
   color: white;
 }
 
 .route-color.green .route-circle {
-  background-color: #4db848; /* Green */
+  background-color: #4db848;
   color: white;
 }
 
 .route-color.yellow .route-circle {
-  background-color: #fce125; /* Yellow */
+  background-color: #fce125;
   color: white;
 }
 
 .route-color.red .route-circle {
-  background-color: #e00148; /* Red */
+  background-color: #e00148;
   color: white;
 }
 
 .route-color.blue .route-circle {
-  background-color: #00aeef; /* Blue */
+  background-color: #00aeef;
   color: white;
 }
 
 /* Style the BART map section */
 .bart-map {
   flex: 1;
-  max-width: 100%; /* Adjust the width as needed */
-  box-sizing: border-box; /* Include padding and borders in the width */
-  padding: 20px; /* Added padding for better spacing */
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.train-info {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.train-info strong {
+  font-weight: bold;
+  margin-left: 8px;
+  color: #0072ce;
+}
+
+.train-info::before {
+  content: "🚆";
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.current-time {
+  text-align: start;
+  font-size: 18px;
+  color: #0072ce;
+  margin-top: 10px; /* Add margin to separate it from other elements */
 }
 
 /* Style the BART map image */
 img {
   width: 100%;
-  height: 600px;
+  height: auto;
   display: block;
 }
 
@@ -154,14 +190,14 @@ img {
     height: 100%;
   }
   .route-info-container {
-    flex-direction: column; /* Stack elements on smaller screens */
+    flex-direction: column;
   }
 
   .real-time-info {
-    max-width: 100%; /* Full width for real-time info on smaller screens */
+    max-width: 100%;
   }
 
   .bart-map {
-    max-width: 100%; /* Full width for BART map on smaller screens */
+    max-width: 100%;
   }
 }

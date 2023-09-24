@@ -26,4 +26,6 @@
 ### 9/23/2023
 - [x] 2:30 pm - 3:30 pm: Contact.js file. Contact form implemented EmailJS API backend server to allow users to submit emails to contact the creator.
 
-# Total time spent: 21 hours
+- [x] 10:00 pm - 12:00 pm: Refactored RouteInfo.js file to RealTimeDepartures. Page is dynamic and re-renders component when time has passed to reflect real-time. Enhancing user functionality. CSS improved for header and RealTimeDepartures.
+
+# Total time spent: 23 hours
