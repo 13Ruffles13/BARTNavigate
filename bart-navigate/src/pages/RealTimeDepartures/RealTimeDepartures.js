@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { fetchBartRealTimeInfo } from "../services/bartService";
+import { fetchBartRealTimeInfo } from "../../services/bartService";
 import "./RealTimeDepartures.css";
-import BartMapImage from "../assets/images/BART-System-Map.png";
+import BartMapImage from "../../assets/images/BART-System-Map.png";
 
 /**
  * RealTimeDepartures functional component.

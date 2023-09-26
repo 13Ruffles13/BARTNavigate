@@ -1,3 +1,5 @@
+import React from "react";
+import "./About.css";
 /**
  * Renders information about the BART system.
  * @returns {JSX.Element} The rendered About component.
