@@ -8,10 +8,10 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container">
         <p>
           &copy; {currentYear} BartNavigate{" "}
-          <span role="img" aria-label="train emoji" className="emoji">
+          <span role="img" aria-label="train emoji" className="footer-emoji">
             🚆
           </span>
         </p>

@@ -1,0 +1,45 @@
+/* NotFound.css */
+
+/* Style for the container div */
+.not-found-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style for the 404 message */
+.not-found-title {
+  font-size: 3rem;
+  color: #ff5733;
+}
+
+/* Style for the description text */
+.not-found-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Style for the link */
+.not-found-link {
+  font-size: 1.5rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* Hover effect for the link */
+.not-found-link:hover {
+  color: #0056b3;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 2rem;
+  }
+  .not-found-text {
+    font-size: 1rem;
+  }
+  .not-found-link {
+    font-size: 1.3rem;
+  }
+}

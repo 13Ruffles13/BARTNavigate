@@ -86,11 +86,14 @@ function Home() {
   }
 
   return (
-    <div className="home">
-      <h1>Welcome to BartNavigate</h1>
-      <p>Explore the BartNavigate system and its routes:</p>
-      <div ref={mapRef} id="map"></div>
-      {isLoading ? <p>Loading...</p> : null}
+    <div className="home-container">
+      <h1 className="home-title">Welcome to BartNavigate</h1>{" "}
+      <p className="home-text">
+        Explore the BartNavigate system and its routes:
+      </p>
+      <div ref={mapRef} className="map-container">
+        {isLoading ? <p>Loading...</p> : null}
+      </div>
     </div>
   );
 }

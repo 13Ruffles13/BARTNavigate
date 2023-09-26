@@ -1,0 +1,39 @@
+/* About.css */
+
+/* Style for the container */
+.about-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for headings */
+.about-title {
+  color: #333;
+}
+
+/* Style for paragraphs */
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #555;
+}
+
+/* Style for numbers */
+.about-numbers {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+  .about-title,
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+}

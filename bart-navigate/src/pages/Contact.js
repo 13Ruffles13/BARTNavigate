@@ -100,12 +100,12 @@ function Contact() {
    */
   const linkedinLink = "https://www.linkedin.com/in/rafael-alvarado-jr/";
 
-  return (
+   return (
     <div className="contact-container">
-      <h2>Contact us</h2>
+      <h2 className="contact-title">Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Your Name</label>
           <input
             type="text"
             id="name"
@@ -116,7 +116,7 @@ function Contact() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Your Email</label>
           <input
             type="email"
             id="email"
@@ -137,7 +137,7 @@ function Contact() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Your Message</label>
           <textarea
             id="message"
             name="message"
@@ -151,7 +151,7 @@ function Contact() {
         </button>
       </form>
       <div className="service-hours">
-        <h3>BartNavigate Service Hours</h3>
+        <h3 className="service-hours-title">BartNavigate Service Hours</h3>
         <ul>
           {Object.entries(serviceHours).map(([day, hours]) => (
             <li key={day}>
@@ -161,7 +161,7 @@ function Contact() {
         </ul>
       </div>
       <div className="social-links">
-        <h3>Connect with the Creator</h3>
+        <h3 className="social-links-title">Connect with the Creator</h3>
         <a href={githubLink} target="_blank" rel="noopener noreferrer">
           GitHub
         </a>

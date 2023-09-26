@@ -1,5 +1,7 @@
+/* Home.css */
+
 /* Style the home container */
-.home {
+.home-container {
   text-align: center;
   padding: 20px;
   background-color: #f7f7f7; /* Light background color for the container */
@@ -9,21 +11,21 @@
 }
 
 /* Increase font size for the title */
-.home h1 {
+.home-title {
   font-size: 36px;
   color: #333; /* Dark text color */
   margin-bottom: 20px;
 }
 
 /* Increase font size for the text */
-.home p {
+.home-text {
   font-size: 20px;
   color: #444; /* Slightly darker text color */
   margin-bottom: 30px;
 }
 
 /* Style the map container */
-#map {
+.map-container {
   width: 100%; /* Set the width to 100% of the container */
   height: 600px; /* Adjust the height as needed */
   border: 1px solid #ddd; /* Add a light border around the map */
@@ -34,16 +36,16 @@
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   /* Adjust styles for smaller screens */
-  .home h1 {
+  .home-title {
     font-size: 28px; /* Decrease font size for the title on smaller screens */
   }
 
-  .home p {
+  .home-text {
     font-size: 16px; /* Decrease font size for the text on smaller screens */
     margin-bottom: 20px; /* Reduce margin for the text on smaller screens */
   }
 
-  #map {
+  .map-container {
     height: 400px; /* Decrease map height on smaller screens */
   }
 }

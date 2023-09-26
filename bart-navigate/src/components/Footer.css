@@ -1,3 +1,5 @@
+/* Footer.css */
+
 /* Style the footer */
 .footer {
   background-color: #0072ce;
@@ -6,8 +8,8 @@
   padding: 10px 0;
 }
 
-/* Style the emoji */
-.emoji {
+/* Style the emoji in the footer */
+.footer-emoji {
   font-size: 24px;
   margin-left: 5px;
 }

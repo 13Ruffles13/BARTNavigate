@@ -1,3 +1,5 @@
+/* App.css */
+
 /* Apply a background color and set font styles */
 body {
   /* Use a modern sans-serif font for the body text */
@@ -8,7 +10,7 @@ body {
 }
 
 /* Center the content horizontally and add some spacing */
-.App {
+.app-container {
   width: 100%; /* Take up the full width of the viewport */
   box-sizing: border-box; /* Include padding and borders in the width */
   padding: 20px;
@@ -17,7 +19,7 @@ body {
 
 /* Define a dynamic maximum width based on screen width */
 @media (min-width: 768px) {
-  .App {
+  .app-container {
     max-width: 90%; /* Set a dynamic maximum width as a percentage for larger screens */
   }
 }

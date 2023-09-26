@@ -1,17 +1,12 @@
-/**
- * RealTimeDepartures component displays real-time BART (Bay Area Rapid Transit) information.
- * It allows users to select their current station and destination, then fetches and displays
- * information about matching trains between those stations.
- *
- * @component
- */
 import React, { useEffect, useState, useCallback } from "react";
 import { fetchBartRealTimeInfo } from "../services/bartService";
 import "./RealTimeDepartures.css";
 import BartMapImage from "../assets/images/BART-System-Map.png";
 
 /**
- * RealTimeDepartures functional component
+ * RealTimeDepartures functional component.
+ *
+ * @returns {JSX.Element} The rendered RealTimeDepartures component.
  */
 function RealTimeDepartures() {
   // State variables for component
@@ -172,18 +167,21 @@ function RealTimeDepartures() {
   }, []);
 
   return (
-    <div className="route-info-container">
+    <div className="real-time-container">
       <div className="real-time-info">
-        <h2>Real-Time BART Information</h2>
+        <h2 className="real-time-title">Real-Time BART Information</h2>
         <p className="current-time">Current Pacific Time: {currentTime}</p>
         {loading ? (
-          <p>Loading...</p>
+          <p className="real-time-loading">Loading...</p>
         ) : (
           <div>
-            <form className="route-form">
+            <form className="real-time-form">
               <div>
-                <label>Select current station:</label>
+                <label className="real-time-label">
+                  Select current station:
+                </label>
                 <select
+                  className="real-time-input"
                   value={currentLocation}
                   onChange={(e) => handleCurrentLocationSelect(e.target.value)}
                 >
@@ -199,8 +197,9 @@ function RealTimeDepartures() {
                 </select>
               </div>
               <div>
-                <label>Select destination:</label>
+                <label className="real-time-label">Select destination:</label>
                 <select
+                  className="real-time-input"
                   value={selectedStation}
                   onChange={(e) => handleStationSelect(e.target.value)}
                 >
@@ -217,25 +216,41 @@ function RealTimeDepartures() {
               </div>
               {bothStationsSelected && colorRoutes.length > 0 ? (
                 <div>
-                  <h3>Selected Current Location: {currentLocation}</h3>
-                  <h3>Selected Destination: {selectedStation}</h3>
+                  <h3 className="real-time-selected">
+                    Selected Current Location: {currentLocation}
+                  </h3>
+                  <h3 className="real-time-selected">
+                    Selected Destination: {selectedStation}
+                  </h3>
                   {colorRoutes.map((color) => (
                     <div key={color}>
-                      <h4>
-                        <span className={`route-color ${color.toLowerCase()}`}>
-                          <span className="route-circle"></span>Route {color}
+                      <h4 className="real-time-route">
+                        <span
+                          className={`real-time-circle ${color.toLowerCase()}`}
+                        >
+                          &nbsp;{/* Add a non-breaking space */}
                         </span>
+                        Route {color}
                       </h4>
-                      <ul>
+                      <ul className="real-time-route-list">
                         {matchingTrains[color].map((train, index) => (
-                          <li key={index} className="train-info">
-                            Train {index + 1}:{" "}
+                          <li key={index} className="real-time-route-item">
+                            <span
+                              className={`real-time-circle route-color ${color.toLowerCase()}`}
+                            ></span>
+                            <strong>🚆 Train {index + 1}: </strong>
                             {train.minutes[0] === "Leaving" ? (
-                              <strong>Train is leaving station</strong>
+                              <span className="real-time-train-status real-time-train-leaving">
+                                Train is leaving station
+                              </span>
                             ) : train.minutes[0] === "0" ? (
-                              <strong>Train has left station</strong>
+                              <span className="real-time-train-status real-time-train-left-station">
+                                Train has left station
+                              </span>
                             ) : (
-                              `${train.minutes[0]} minutes away`
+                              <span className="real-time-train-status">
+                                {`${train.minutes[0]} minutes away`}
+                              </span>
                             )}
                           </li>
                         ))}
@@ -248,8 +263,8 @@ function RealTimeDepartures() {
           </div>
         )}
       </div>
-      <div className="bart-map">
-        <img src={BartMapImage} alt="BART Map"></img>
+      <div className="real-time-map">
+        <img className="real-time-img" src={BartMapImage} alt="BART Map" />
       </div>
     </div>
   );

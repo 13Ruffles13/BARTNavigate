@@ -28,4 +28,7 @@
 
 - [x] 10:00 pm - 12:00 pm: Refactored RouteInfo.js file to RealTimeDepartures. Page is dynamic and re-renders component when time has passed to reflect real-time. Enhancing user functionality. CSS improved for header and RealTimeDepartures.
 
+### 9/25/2023
+- [x] 4:00 pm - 6:00 pm: Updated files on giving each individual page a unique semantic className where it was needed to ensure styles are being updated accordingly. JSDOC updated for certain JS components.
+
 # Total time spent: 23 hours

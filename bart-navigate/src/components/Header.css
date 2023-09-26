@@ -1,5 +1,6 @@
 /* Header.css */
 
+/* Header container */
 .header {
   background-image: url("../assets/images/Logo-BartNavigate.jpg");
   background-size: cover;
@@ -42,14 +43,15 @@
   margin-right: 0;
 }
 
-.nav-item a {
+/* Style navigation links */
+.nav-link {
   text-decoration: none;
   color: #fff;
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover effect for navigation items */
-.nav-item a:hover {
+/* Hover effect for navigation links */
+.nav-link:hover {
   color: #49c6e5;
 }
 

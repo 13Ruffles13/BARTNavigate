@@ -1,14 +1,7 @@
-/* Apply a background color and set font styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* RealTimeDepartures.css */
 
 /* Style the container for route info and BART map */
-.route-info-container {
+.real-time-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -19,20 +12,19 @@ body {
 
 /* Style the real-time info section */
 .real-time-info {
-  flex: 1;
   max-width: 65%;
   box-sizing: border-box;
   padding: 20px;
 }
 
-h2 {
+.real-time-title {
   font-size: 28px;
   margin-bottom: 20px;
   color: #0072ce;
 }
 
 /* Style the form elements */
-.route-form {
+.real-time-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -40,17 +32,13 @@ h2 {
   box-sizing: border-box;
 }
 
-label {
+.real-time-label {
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 /* Select input fields, textarea, and the date calendar */
-input[type="text"],
-input[type="email"],
-textarea,
-select,
-text {
+.real-time-input {
   width: 100%;
   border-radius: 4px;
   font-size: 16px;
@@ -59,49 +47,49 @@ text {
   border: 1px solid #ccc;
 }
 
-.react-datepicker__input-container {
+.real-time-datepicker {
   width: 100%;
 }
 
 /* Style the loading indicator */
-p {
+.real-time-loading {
   text-align: center;
   font-size: 18px;
 }
 
 /* Style the selected information */
-h3 {
+.real-time-selected {
   margin-top: 20px;
   font-size: 22px;
   color: #333;
 }
 
 /* Style the train route information */
-h4 {
+.real-time-route {
   margin-top: 10px;
   display: flex;
   align-items: center;
   font-size: 20px;
 }
 
-ul {
+.real-time-route-list {
   list-style: none;
   padding: 0;
 }
 
-li {
+.real-time-route-item {
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
 }
 
 /* Style the strong element */
-strong {
+.real-time-strong {
   color: #0072ce;
 }
 
 /* Define route colors and corresponding styles */
-.route-color {
+.real-time-color {
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
@@ -109,7 +97,7 @@ strong {
   font-size: 18px;
 }
 
-.route-circle {
+.real-time-circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -117,40 +105,40 @@ strong {
 }
 
 /* Color coordination for routes */
-.route-color.orange .route-circle {
+.real-time-circle.orange {
   background-color: #f99f1a;
   color: white;
 }
 
-.route-color.green .route-circle {
+.real-time-circle.green {
   background-color: #4db848;
   color: white;
 }
 
-.route-color.yellow .route-circle {
+.real-time-circle.yellow {
   background-color: #fce125;
   color: white;
 }
 
-.route-color.red .route-circle {
+.real-time-circle.red {
   background-color: #e00148;
   color: white;
 }
 
-.route-color.blue .route-circle {
+.real-time-circle.blue {
   background-color: #00aeef;
   color: white;
 }
 
 /* Style the BART map section */
-.bart-map {
+.real-time-map {
   flex: 1;
   max-width: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
 
-.train-info {
+.real-time-train-info {
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -158,27 +146,19 @@ strong {
   color: #333;
 }
 
-.train-info strong {
-  font-weight: bold;
-  margin-left: 8px;
-  color: #0072ce;
-}
-
-.train-info::before {
-  content: "🚆";
-  font-size: 24px;
-  margin-right: 10px;
+.real-time-train-leaving {
+  color: #00ccff;
 }
 
 .current-time {
   text-align: start;
   font-size: 18px;
   color: #0072ce;
-  margin-top: 10px; /* Add margin to separate it from other elements */
+  margin-top: 10px;
 }
 
 /* Style the BART map image */
-img {
+.real-time-img {
   width: 100%;
   height: auto;
   display: block;
@@ -186,10 +166,10 @@ img {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-  img {
+  .real-time-img {
     height: 100%;
   }
-  .route-info-container {
+  .real-time-container {
     flex-direction: column;
   }
 
@@ -197,7 +177,20 @@ img {
     max-width: 100%;
   }
 
-  .bart-map {
+  .real-time-map {
     max-width: 100%;
   }
+}
+
+/* Styles for train status messages */
+.real-time-train-status {
+  font-weight: bold;
+}
+
+.real-time-train-leaving {
+  color: #00ccff; /* Blue for "Train is leaving station" */
+}
+
+.real-time-train-left-station {
+  color: #ff0000; /* Red for "Train has left station" */
 }

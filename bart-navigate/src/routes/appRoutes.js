@@ -20,7 +20,7 @@ const AppRoutes = () => {
       <Route path="/real-time-departures" element={<RealTimeDepartures />} />
 
       {/* Route for the About page */}
-      {/* <Route path="/about" element={<About />} /> */}
+      <Route path="/about" element={<About />} />
 
       {/* Route for the Contact page */}
       <Route path="/contact" element={<Contact />} />

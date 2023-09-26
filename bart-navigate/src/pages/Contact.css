@@ -14,7 +14,7 @@
 }
 
 /* Header Styles */
-.contact-container h2 {
+.contact-title {
   color: #ff6200;
   font-size: 24px;
   margin-bottom: 20px;
@@ -78,8 +78,8 @@ textarea {
   text-align: center;
 }
 
-.service-hours h3,
-.social-links h3 {
+.service-hours,
+.social-links{
   color: #007acc;
   font-size: 20px;
   margin-bottom: 10px;
