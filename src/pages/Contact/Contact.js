@@ -79,13 +79,13 @@ function Contact() {
    * @type {Object}
    */
   const serviceHours = {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM",
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "10:00 AM - 4:00 PM",
-    sunday: "Closed",
+    monday: "5:00 AM - 12:00 PM",
+    tuesday: "5:00 AM - 12:00 PM",
+    wednesday: "5:00 AM - 12:00 PM",
+    thursday: "5:00 AM - 12:00 PM",
+    friday: "5:00 AM - 12:00 PM",
+    saturday: "6:00 AM - 12:00 PM",
+    sunday: "8:00 AM - 12:00 PM",
   };
 
   /**
@@ -100,7 +100,7 @@ function Contact() {
    */
   const linkedinLink = "https://www.linkedin.com/in/rafael-alvarado-jr/";
 
-   return (
+  return (
     <div className="contact-container">
       <h2 className="contact-title">Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
