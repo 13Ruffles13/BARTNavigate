@@ -31,4 +31,9 @@
 ### 9/25/2023
 - [x] 4:00 pm - 6:00 pm: Updated files on giving each individual page a unique semantic className where it was needed to ensure styles are being updated accordingly. JSDOC updated for certain JS components.
 
-# Total time spent: 25 hours
+### 9/26/2023
+- [x] 8:00 am - 9:00 am: Fix bug causing rendering when data was not loaded correctly for file RealTimeDepartures. Added JEST/React-tests for components in component directory.
+
+- [x] 10:00 am - 1:00 pm: Added - Test files for pages directory components and Routes directory component. As well as main App component. All tests have passed. 
+
+# Total time spent: 28 hours

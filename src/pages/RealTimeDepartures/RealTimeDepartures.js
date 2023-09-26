@@ -244,7 +244,7 @@ function RealTimeDepartures() {
                             <span
                               className={`real-time-circle route-color ${color.toLowerCase()}`}
                             ></span>
-                            <strong>🚆 Train {index + 1}: </strong>
+                            <strong><span role="img" alt='Bart'>🚆</span> Train {index + 1}: </strong>
                             {train.minutes[0] === "Leaving" ? (
                               <span className="real-time-train-status real-time-train-leaving">
                                 Train is leaving station
