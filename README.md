@@ -14,8 +14,4 @@
 
 - assets: Ideal for storing static assets like images, stylesheets, and fonts.
 
-- config: Houses configuration files, such as settings or constants utilized throughout the application.
-
-- utils: Stores utility functions used across the application.
-
 - tests: Organizes tests for components or functions, if written.
