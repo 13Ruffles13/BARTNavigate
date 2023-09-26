@@ -14,7 +14,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* Route for the Home page */}
-      <Route path="/" element={<Home />} />
+      <Route path="/BARTNavigate" element={<Home />} />
 
       {/* Route for the Real-time-departures page */}
       <Route path="/real-time-departures" element={<RealTimeDepartures />} />
