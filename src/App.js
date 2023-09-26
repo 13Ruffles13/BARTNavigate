@@ -11,7 +11,7 @@ import "./App.css";
  */
 function App() {
   return (
-    <Router>
+    <Router basename="/BARTNavigate">
       <div className="app-container">
         <Header />
         <AppRoutes /> {/* Route configuration component */}
