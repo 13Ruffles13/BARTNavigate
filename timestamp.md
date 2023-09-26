@@ -31,4 +31,4 @@
 ### 9/25/2023
 - [x] 4:00 pm - 6:00 pm: Updated files on giving each individual page a unique semantic className where it was needed to ensure styles are being updated accordingly. JSDOC updated for certain JS components.
 
-# Total time spent: 23 hours
+# Total time spent: 25 hours
