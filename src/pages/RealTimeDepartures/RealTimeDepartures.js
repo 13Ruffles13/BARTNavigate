@@ -18,6 +18,7 @@ function RealTimeDepartures() {
   const [matchingTrains, setMatchingTrains] = useState({});
   const [bothStationsSelected, setBothStationsSelected] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
+  const [initialFetch, setInitialFetch] = useState(true);
 
   /**
    * Fetches closest trains between the current location and the destination.
@@ -125,14 +126,18 @@ function RealTimeDepartures() {
 
   // Fetch data on component mount and set interval to fetch data every minute
   useEffect(() => {
-    fetchData();
-
-    const intervalId = setInterval(() => {
+    if (initialFetch) {
       fetchData();
-    }, 60000);
+      setInitialFetch(false);
+    } else {
+      const MINUTE_REFRESH_INTERVAL = 60000;
+      const intervalId = setInterval(() => {
+        fetchData();
+      }, MINUTE_REFRESH_INTERVAL);
 
-    return () => clearInterval(intervalId);
-  }, [fetchData]);
+      return () => clearInterval(intervalId);
+    }
+  }, [initialFetch, fetchData]);
 
   // Check both stations whenever the selected station or current location changes
   useEffect(() => {
@@ -155,13 +160,14 @@ function RealTimeDepartures() {
 
   // Set interval to update current time every second
   useEffect(() => {
+    const EVERY_SECOND_REFRESH_INTERVAL = 1000;
     const intervalId = setInterval(() => {
       const now = new Date();
       const pacificTime = new Date(
         now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
       );
       setCurrentTime(pacificTime.toLocaleString());
-    }, 1000);
+    }, EVERY_SECOND_REFRESH_INTERVAL);
 
     return () => clearInterval(intervalId);
   }, []);
