@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/BARTNavigate/static/css/main.164126f3.css",
-    "main.js": "/BARTNavigate/static/js/main.2bab6b75.js",
+    "main.js": "/BARTNavigate/static/js/main.319690f4.js",
     "static/js/787.77d814fb.chunk.js": "/BARTNavigate/static/js/787.77d814fb.chunk.js",
     "static/media/BART-System-Map.png": "/BARTNavigate/static/media/BART-System-Map.8a2e696cbc0fd477cc62.png",
     "static/media/Logo-BartNavigate.jpg": "/BARTNavigate/static/media/Logo-BartNavigate.67c55318c61146fdc06e.jpg",
     "index.html": "/BARTNavigate/index.html",
     "main.164126f3.css.map": "/BARTNavigate/static/css/main.164126f3.css.map",
-    "main.2bab6b75.js.map": "/BARTNavigate/static/js/main.2bab6b75.js.map",
+    "main.319690f4.js.map": "/BARTNavigate/static/js/main.319690f4.js.map",
     "787.77d814fb.chunk.js.map": "/BARTNavigate/static/js/787.77d814fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.164126f3.css",
-    "static/js/main.2bab6b75.js"
+    "static/js/main.319690f4.js"
   ]
 }
