@@ -22,7 +22,7 @@ BARTNavigate is your ultimate Bay Area Rapid Transit (BART) companion, designed 
 
 ### 3. Interactive Map
 
-- **Description**: Explore the BART system through an interactive map that displays station locations and provides quick access to station address.
+- **Description**: Explore the BART system through an interactive map that displays station locations and provides quick access to station addresses.
 - **Why**: The map offers a visual representation of the BART network, making it easier for users to understand.
 
 ### 4. Contact Information
@@ -48,7 +48,7 @@ npm test
 
 1. Visit the BARTNavigate website.
 2. Explore real-time departure information
-3. View detailed information about stations, including address.
+3. View detailed information about stations, including addresses.
 4. Use the interactive map to explore the BART system.
 5. Visit information about BARTNavigate
 
@@ -57,12 +57,11 @@ npm test
 
 ## Technology Stack
 - Frontend: React.js
-- State Management: React.js
-- Routing: React
-- Styling: CSS Modules
+- Routing: ReactRouter
+- Styling: CSS
 - API Integration: Axios
 - Testing: Jest and React Testing Library
-- Deployment: Github white-pages
+- Deployment: Github pages
 
 
 **Thank you for choosing BARTNavigate to enhance your BART experience!**
