@@ -50,9 +50,22 @@
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover effect for navigation links */
+/* Active link style with different colors */
+.nav-link.active {
+  color: #fff; /* White text for the active link text */
+  background-color: #0072ce; /* Dark blue background for the active link */
+  font-weight: bold; /* Bold text for emphasis */
+  padding: 5px 10px; /* Padding for spacing */
+  border-radius: 3px; /* Slightly rounded corners for a subtle style */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hover effect for navigation links with the same hover color */
 .nav-link:hover {
-  color: #49c6e5;
+  color: #fff; /* White text on hover */
+  background-color: #0072ce; /* Dark blue background on hover */
+  border-radius: 3px; /* Slightly rounded corners for a subtle style */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
 }
 
 /* Responsive styles */

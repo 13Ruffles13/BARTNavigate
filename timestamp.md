@@ -15,25 +15,35 @@
 - [x] 8:00 pm - 10:00 pm: Add route page RouteInfo I transferred the logic from About.js to RouteInfo.js. Added RouteInfo.CSS. Enhanced CSS to include a person user experience. Component Footer.js/Footer.css. Added to give visibility to user interface.
 
 ### 9/18/2023
+
 - [x] 9:00 am - 11:00 am: Added JSDOC to all components / files in the application to give better fluid workflow for reading the codebase.
 
 ### 9/19/2023
+
 - [x] 12:00 pm - 3:00 pm: Removed from home page static BART API image. Added dependency library leaflet. Added a interactive MAP to the home page letting users click on Train emoji icons that will display details regarding the station on a accurate visual map. Updated CSS. Added a stationInfoService file to interact with a fetch to the API to get information on the station using longitude and latitude.
 
 ### 9/21/2023
+
 - [x] 10:00 am - 12:00 pm: Added dynamic UX css to pages to give users better friendly experience when browsing through application. Being able to use any device. Updated index.html to include a google font to give more eye-catching modern look.
 
 ### 9/23/2023
+
 - [x] 2:30 pm - 3:30 pm: Contact.js file. Contact form implemented EmailJS API backend server to allow users to submit emails to contact the creator.
 
 - [x] 10:00 pm - 12:00 pm: Refactored RouteInfo.js file to RealTimeDepartures. Page is dynamic and re-renders component when time has passed to reflect real-time. Enhancing user functionality. CSS improved for header and RealTimeDepartures.
 
 ### 9/25/2023
+
 - [x] 4:00 pm - 6:00 pm: Updated files on giving each individual page a unique semantic className where it was needed to ensure styles are being updated accordingly. JSDOC updated for certain JS components.
 
 ### 9/26/2023
+
 - [x] 8:00 am - 9:00 am: Fix bug causing rendering when data was not loaded correctly for file RealTimeDepartures. Added JEST/React-tests for components in component directory.
 
-- [x] 10:00 am - 1:00 pm: Added - Test files for pages directory components and Routes directory component. As well as main App component. All tests have passed. 
+- [x] 10:00 am - 1:00 pm: Added - Test files for pages directory components and Routes directory component. As well as main App component. All tests have passed.
 
-# Total time spent: 28 hours
+### 10/03/2023
+
+= [x] 8:00 am - 9:00 am: Added - User experience added once a user clicks a link it highlights the location.
+
+# Total time spent: 29 hours
