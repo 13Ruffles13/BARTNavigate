@@ -1,6 +1,27 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import successImage from "../../assets/images/Email-Check-Mark-Successful.png";
 import "./Contact.css";
+
+/**
+ * Component for displaying a success pop-up.
+ * @param {Object} props - Component props.
+ * @param {function} props.onClose - Callback function to close the pop-up.
+ * @component
+ */
+function SuccessPopup({ onClose }) {
+  return (
+    <div className="success-popup">
+      <div className="popup-content">
+        <span className="close-button" onClick={onClose}>
+          &times;
+        </span>
+        <p>Successfully submitted!</p>
+        <img src={successImage} alt="Success check mark" />
+      </div>
+    </div>
+  );
+}
 
 /**
  * Component for rendering a contact form.
@@ -22,6 +43,11 @@ function Contact() {
     subject: "",
   });
 
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   /**
    * Handles changes in form input fields.
    * @param {Event} event - The input change event.
@@ -40,6 +66,28 @@ function Contact() {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Check if required fields are filled out
+    if (formData.name.trim() === "") {
+      setNameError("Please fill out your name.");
+      return;
+    } else {
+      setNameError("");
+    }
+
+    if (formData.email.trim() === "") {
+      setEmailError("Please fill out your email.");
+      return;
+    } else {
+      setEmailError("");
+    }
+
+    if (formData.message.trim() === "") {
+      setMessageError("Please fill out your message.");
+      return;
+    } else {
+      setMessageError("");
+    }
 
     emailjs
       .send(
@@ -61,6 +109,7 @@ function Contact() {
             message: "",
             subject: "", // Clear the subject field after submission
           });
+          setShowSuccessPopup(true); // Show user the success pop-up
         },
         /**
          * Callback function executed upon an error in email submission.
@@ -72,6 +121,13 @@ function Contact() {
       );
 
     console.log("Form submitted with data: ", formData);
+  };
+
+  /**
+   * Closes the success pop-up.
+   */
+  const closeSuccessPopup = () => {
+    setShowSuccessPopup(false);
   };
 
   /**
@@ -104,27 +160,29 @@ function Contact() {
     <div className="contact-container">
       <h2 className="contact-title">Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Your Name</label>
+        <div className="form-group required">
+          <label htmlFor="name">Name: </label>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            required
+            placeholder="Enter your name"
           />
+          {nameError && <p className="error-message">{nameError}</p>}
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Your Email</label>
+        <div className="form-group required">
+          <label htmlFor="email">Email: </label>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            required
+            placeholder="Enter your email"
           />
+          {emailError && <p className="error-message">{emailError}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="subject">Subject</label>
@@ -134,22 +192,25 @@ function Contact() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
+            placeholder="Enter the subject"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="message">Your Message</label>
+        <div className="form-group required">
+          <label htmlFor="message">Message: </label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            required
+            placeholder="Enter your message"
           />
+          {messageError && <p className="error-message">{messageError}</p>}
         </div>
         <button type="submit" className="submit-button">
           Submit
         </button>
       </form>
+      {showSuccessPopup && <SuccessPopup onClose={closeSuccessPopup} />}
       <div className="service-hours">
         <h3 className="service-hours-title">BartNavigate Service Hours</h3>
         <ul>

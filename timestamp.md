@@ -44,8 +44,10 @@
 
 ### 10/03/2023
 
-= [x] 8:00 pm - 9:00 pm: Added - User experience added once a user clicks a link it highlights the location.
+- [x] 8:00 pm - 9:00 pm: Added - User experience added once a user clicks a link it highlights the location.
 
 - [x] 9:00 pm - 9:30 pm: Added - User experience error message handle when user clicks on Real time departure feature if API data can not be fetched user will know and be prompted a error message on screen so they are not waiting for something to load onto the page.
+
+- [x] 9:30 pm - 11:00 pm: Added - User experience error handling contact form adding place holders and stating which field needs to be filled if user tries and submit email form without filling out the required fields. Also added a successful layover message once email has been submitted
 
 # Total time spent: 29 hours and 30 minutes
