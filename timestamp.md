@@ -50,4 +50,4 @@
 
 - [x] 9:30 pm - 11:00 pm: Added - User experience error handling contact form adding place holders and stating which field needs to be filled if user tries and submit email form without filling out the required fields. Also added a successful layover message once email has been submitted
 
-# Total time spent: 29 hours and 30 minutes
+# Total time spent: 31 hours
