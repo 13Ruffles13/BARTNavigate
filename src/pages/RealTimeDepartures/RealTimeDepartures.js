@@ -19,6 +19,7 @@ function RealTimeDepartures() {
   const [bothStationsSelected, setBothStationsSelected] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
   const [initialFetch, setInitialFetch] = useState(true);
+  const [error, setError] = useState(null);
 
   /**
    * Fetches closest trains between the current location and the destination.
@@ -106,12 +107,15 @@ function RealTimeDepartures() {
       const stationData = jsonData.root.station;
       setStations(stationData);
       setLoading(false);
+      setError(null); // Reset error message if data is successful
 
       if (bothStationsSelected) {
         fetchClosestTrains(selectedStation);
       }
     } catch (error) {
       console.error(error);
+      setError(error); // Set the error state if an error ocurred with the API fetch
+      setLoading(false);
     }
   }, [bothStationsSelected, selectedStation, fetchClosestTrains]);
 
@@ -172,16 +176,27 @@ function RealTimeDepartures() {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Render an error message if there's an error
+  if (error) {
+    return (
+      <div className="error-container">
+        <p className="error-message">Error: {error.message}</p>
+      </div>
+    );
+  }
+
+  // Render the main content if there's no error
   return (
     <div className="real-time-container">
       <div className="real-time-info">
         <h2 className="real-time-title">Real-Time BART Information</h2>
         <p className="current-time">Current Pacific Time: {currentTime}</p>
-        {loading ? (
+        {loading && !error ? (
           <p className="real-time-loading">Loading...</p>
         ) : (
           <div>
             <form className="real-time-form">
+              {/* Select current station */}
               <div>
                 <label className="real-time-label">
                   Select current station:
@@ -202,6 +217,7 @@ function RealTimeDepartures() {
                     ))}
                 </select>
               </div>
+              {/* Select destination */}
               <div>
                 <label className="real-time-label">Select destination:</label>
                 <select
@@ -220,7 +236,8 @@ function RealTimeDepartures() {
                     ))}
                 </select>
               </div>
-              {bothStationsSelected && colorRoutes.length > 0 ? (
+              {/* Display selected stations and routes */}
+              {bothStationsSelected && colorRoutes.length > 0 && (
                 <div>
                   <h3 className="real-time-selected">
                     Selected Current Location: {currentLocation}
@@ -244,7 +261,12 @@ function RealTimeDepartures() {
                             <span
                               className={`real-time-circle route-color ${color.toLowerCase()}`}
                             ></span>
-                            <strong><span role="img" alt='Bart'>🚆</span> Train {index + 1}: </strong>
+                            <strong>
+                              <span role="img" alt="Bart">
+                                🚆
+                              </span>{" "}
+                              Train {index + 1}:{" "}
+                            </strong>
                             {train.minutes[0] === "Leaving" ? (
                               <span className="real-time-train-status real-time-train-leaving">
                                 Train is leaving station
@@ -264,7 +286,7 @@ function RealTimeDepartures() {
                     </div>
                   ))}
                 </div>
-              ) : null}
+              )}
             </form>
           </div>
         )}

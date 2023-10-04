@@ -194,3 +194,14 @@
 .real-time-train-left-station {
   color: #ff0000; /* Red for "Train has left station" */
 }
+
+/* Styles for error messages */
+.error-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 18px;
+}

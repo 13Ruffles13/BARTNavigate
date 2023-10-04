@@ -44,6 +44,8 @@
 
 ### 10/03/2023
 
-= [x] 8:00 am - 9:00 am: Added - User experience added once a user clicks a link it highlights the location.
+= [x] 8:00 pm - 9:00 pm: Added - User experience added once a user clicks a link it highlights the location.
 
-# Total time spent: 29 hours
+- [x] 9:00 pm - 9:30 pm: Added - User experience error message handle when user clicks on Real time departure feature if API data can not be fetched user will know and be prompted a error message on screen so they are not waiting for something to load onto the page.
+
+# Total time spent: 29 hours and 30 minutes
